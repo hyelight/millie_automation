@@ -4,8 +4,8 @@ from selenium.webdriver.chrome.options import Options
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.common.by import By
 import time
-from selenium.webdriver.support.wait import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
+# from selenium.webdriver.support.wait import WebDriverWait
+# from selenium.webdriver.support import expected_conditions as EC
 
 chrome_options = Options()
 chrome_options.add_argument('--ignore-certificate-errors')
@@ -84,3 +84,56 @@ assert viewerNumCount == 4
 for viewerNumBtn in viewerNumBtns:
     viewerNumBtn.click()
     time.sleep(2)
+
+# step-5 : 광고 2 (구독 이야기)
+storySection = driver.find_element(By.CSS_SELECTOR, 'section.story')
+driver.execute_script('arguments[0].scrollIntoView()', storySection)
+
+playBtnFirst = driver.find_element(By.CSS_SELECTOR, '.play-button-2')
+playBtnFirst.click()
+time.sleep(5)
+
+driver.refresh()
+
+time.sleep(1)
+
+# step-6 : 자주 묻는 질문
+qaSection = driver.find_element(By.CSS_SELECTOR, 'section.qa')
+driver.execute_script('arguments[0].scrollIntoView()', qaSection)
+
+qaAccordionItems = driver.find_elements(By.CSS_SELECTOR, 'ul.accordion li.accordion-item')
+
+expected_titTxts = ['안쓰면 정말 환불해 주나요?', '구독 중 해지 할 수 있나요? 수수료는 없나요?', '무료 혜택은 누구나 받을 수 있나요?', '어떤 기기에서 사용할 수 있나요?']
+
+for i in range(4):
+    assert qaAccordionItems[i].text == expected_titTxts[i]
+    print(qaAccordionItems[i].text)
+
+expected_contents = ['환불해 드리고 있어요.', '수수료 없이', '첫 달 무료 또는 첫 주 무료', '아래 기기와 버전']
+
+for i, qaAccordionItem in enumerate(qaAccordionItems):
+    qaAccordionItem.click()
+    accordionContent = qaAccordionItem.find_element(By.CSS_SELECTOR, '.accordion-content')
+
+    time.sleep(1)
+
+    assert expected_contents[i] in accordionContent.text
+
+# step-7 : Footer
+footer = driver.find_element(By.CSS_SELECTOR, 'footer')
+driver.execute_script('arguments[0].scrollIntoView()', footer)
+
+businessInfoTlt = driver.find_element(By.CSS_SELECTOR, '.business-info-title')
+businessInfoTlt.click()
+
+assert businessInfoTlt.text == '사업자 정보 닫기'
+
+businessInfoContent = driver.find_element(By.CSS_SELECTOR, '.business-info address.business-info-content').text
+
+assert '호스팅 제공자 : (주) 밀리의 서재' in businessInfoContent
+
+time.sleep(1)
+
+businessInfoTlt.click()
+
+assert businessInfoTlt.text == '사업자 정보 펼쳐보기'
