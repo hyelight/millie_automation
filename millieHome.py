@@ -4,8 +4,7 @@ from selenium.webdriver.chrome.options import Options
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.common.by import By
 import time
-# from selenium.webdriver.support.wait import WebDriverWait
-# from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver import ActionChains
 
 chrome_options = Options()
 chrome_options.add_argument('--ignore-certificate-errors')
@@ -137,3 +136,41 @@ time.sleep(1)
 businessInfoTlt.click()
 
 assert businessInfoTlt.text == '사업자 정보 펼쳐보기'
+
+# ------------- Mobile 환경 테스트 -------------
+
+# 아이폰 12 Pro 기준 크기
+driver.set_window_size(390, 844) 
+
+# step-8 : 햄버거 버튼
+hamburgerBtn = driver.find_element(By.CSS_SELECTOR, '.hamburger-menu')
+hamburgerBtn.click()
+
+time.sleep(1.5)
+
+navLists = driver.find_elements(By.CSS_SELECTOR, 'nav ul li')
+
+expectedMenuLists = ['기업문의', '회사소개', '계정관리', '고객센터']
+
+for i in range(len(expectedMenuLists)):
+    assert navLists[i].text == expectedMenuLists[i]
+
+hamburgerBtn.click()
+
+time.sleep(1)
+
+# step-9 : 책 드래그 기능
+favBookSection = driver.find_element(By.CSS_SELECTOR, 'section.fav-books')
+driver.execute_script('arguments[0].scrollIntoView()', favBookSection)
+
+
+action = ActionChains(driver)
+
+typeBtns = driver.find_elements(By.XPATH, "//section[@class='fav-books']/div[@class='tab-content']/label")
+
+startElements = driver.find_elements(By.CSS_SELECTOR, '.fav-books .book-list-wrapper')
+
+for i in range(len(typeBtns)):
+    typeBtns[i].click()
+    action.move_to_element(startElements[i]).click_and_hold().move_by_offset(-200, 0).release().perform()
+    time.sleep(1)
