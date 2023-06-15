@@ -1,50 +1,50 @@
-2023-06-16 02:20:21,770 :INFO : test_millie :PC 환경 테스트를 시작합니다.
-2023-06-16 02:20:21,777 :INFO : test_step_1 :step-1 : Millie 로고 클릭 시 상단 이동 테스트를 시작합니다.
-2023-06-16 02:20:23,821 :INFO : test_step_1 :MILLIE 로고를 클릭하여 페이지 최상단으로 이동하였습니다.
-2023-06-16 02:20:24,830 :INFO : test_step_2 :step-2 : 광고 1 테스트를 시작합니다.
-2023-06-16 02:20:24,873 :INFO : test_step_2 :광고 1 영상 재생이 시작되었습니다.
-2023-06-16 02:20:29,879 :INFO : test_step_2 :페이지가 새로고침 되었습니다.
-2023-06-16 02:20:30,888 :INFO : test_step_3 :step-3 : 관심 분야별 테스트를 시작합니다.
-2023-06-16 02:20:30,898 :INFO : test_step_3 :관심 분야별 책 섹션으로 이동하였습니다.
-2023-06-16 02:20:32,925 :INFO : test_step_3 :각각의 typeBtn이 클릭되었습니다.
-2023-06-16 02:20:34,447 :INFO : test_step_3 :각각의 typeBtn이 클릭되었습니다.
-2023-06-16 02:20:35,972 :INFO : test_step_3 :각각의 typeBtn이 클릭되었습니다.
-2023-06-16 02:20:37,494 :INFO : test_step_3 :각각의 typeBtn이 클릭되었습니다.
-2023-06-16 02:20:39,016 :INFO : test_step_3 :각각의 typeBtn이 클릭되었습니다.
-2023-06-16 02:20:41,524 :INFO : test_step_4 :step-4 : 오디오북과 밀리뷰어
-2023-06-16 02:20:41,536 :INFO : test_step_4 :오디오북과 밀리뷰어 섹션으로 이동하였습니다.
-2023-06-16 02:20:41,565 :INFO : test_step_4 :exampleNumBtn이 클릭되었습니다.
-2023-06-16 02:20:43,583 :INFO : test_step_4 :exampleNumBtn이 클릭되었습니다.
-2023-06-16 02:20:45,602 :INFO : test_step_4 :exampleNumBtn이 클릭되었습니다.
-2023-06-16 02:20:47,621 :INFO : test_step_4 :exampleNumBtn이 클릭되었습니다.
-2023-06-16 02:20:49,628 :INFO : test_step_4 :현재 기준 scroll_y를 50 만큼 상단으로 이동하였습니다.
-2023-06-16 02:20:49,686 :INFO : test_step_4 :viewerNumBtn이 클릭되었습니다.
-2023-06-16 02:20:51,707 :INFO : test_step_4 :viewerNumBtn이 클릭되었습니다.
-2023-06-16 02:20:53,727 :INFO : test_step_4 :viewerNumBtn이 클릭되었습니다.
-2023-06-16 02:20:55,746 :INFO : test_step_4 :viewerNumBtn이 클릭되었습니다.
-2023-06-16 02:20:57,755 :INFO : test_step_5 :step-5 : 광고 2 (구독 이야기) 테스트를 시작합니다.
-2023-06-16 02:20:57,765 :INFO : test_step_5 :광고 2 (구독 이야기) 섹션으로 이동하였습니다.
-2023-06-16 02:20:57,791 :INFO : test_step_5 :광고 2 영상 재생이 시작되었습니다.
-2023-06-16 02:21:02,794 :INFO : test_step_5 :페이지가 새로고침 되었습니다.
-2023-06-16 02:21:03,802 :INFO : test_step_6 :step-6 : 자주 묻는 질문 테스트를 시작합니다.
-2023-06-16 02:21:03,812 :INFO : test_step_6 :자주 묻는 질문 섹션으로 이동하였습니다.
-2023-06-16 02:21:03,871 :INFO : test_step_6 :qaAccordionItem을 클릭하였습니다.
-2023-06-16 02:21:04,908 :INFO : test_step_6 :qaAccordionItem을 클릭하였습니다.
-2023-06-16 02:21:05,937 :INFO : test_step_6 :qaAccordionItem을 클릭하였습니다.
-2023-06-16 02:21:06,970 :INFO : test_step_6 :qaAccordionItem을 클릭하였습니다.
-2023-06-16 02:21:07,990 :INFO : test_step_7 :step-7 : Footer 테스트를 시작합니다.
-2023-06-16 02:21:07,998 :INFO : test_step_7 :Footer 섹션으로 이동하였습니다.
-2023-06-16 02:21:08,027 :INFO : test_step_7 :Footer의 businessInfoTit을 클릭하였습니다.
-2023-06-16 02:21:09,062 :INFO : test_step_7 :Footer의 businessInfoTit을 클릭하였습니다.
-2023-06-16 02:21:09,292 :INFO : test_millie :아이폰 12 Pro 기준 Mobile 환경 테스트를 시작합니다.
-2023-06-16 02:21:09,301 :INFO : test_step_8 :step-8 : 햄버거 버튼 테스트를 시작합니다.
-2023-06-16 02:21:09,333 :INFO : test_step_8 :햄버거 버튼 메뉴를 클릭하였습니다.
-2023-06-16 02:21:10,871 :INFO : test_step_8 :햄버거 버튼을 클릭하였습니다.
-2023-06-16 02:21:11,881 :INFO : test_step_9 :step-9 : 책 드래그 기능 테스트를 시작합니다.
-2023-06-16 02:21:11,890 :INFO : test_step_9 :책 드래그 기능 섹션으로 이동하였습니다.
-2023-06-16 02:21:11,923 :INFO : test_step_9 :typeBtn이 클릭되었습니다.
-2023-06-16 02:21:13,489 :INFO : test_step_9 :typeBtn이 클릭되었습니다.
-2023-06-16 02:21:15,049 :INFO : test_step_9 :typeBtn이 클릭되었습니다.
-2023-06-16 02:21:16,615 :INFO : test_step_9 :typeBtn이 클릭되었습니다.
-2023-06-16 02:21:18,184 :INFO : test_step_9 :typeBtn이 클릭되었습니다.
-2023-06-16 02:21:19,721 :INFO : test_millie :모든 자동화 테스트가 끝났습니다.
+2023-06-16 02:24:22,764 :INFO : test_millie :PC 환경 테스트를 시작합니다.
+2023-06-16 02:24:22,771 :INFO : test_step_1 :step-1 : Millie 로고 클릭 시 상단 이동 테스트를 시작합니다.
+2023-06-16 02:24:24,816 :INFO : test_step_1 :MILLIE 로고를 클릭하여 페이지 최상단으로 이동하였습니다.
+2023-06-16 02:24:25,824 :INFO : test_step_2 :step-2 : 광고 1 테스트를 시작합니다.
+2023-06-16 02:24:25,865 :INFO : test_step_2 :광고 1 영상 재생이 시작되었습니다.
+2023-06-16 02:24:30,871 :INFO : test_step_2 :페이지가 새로고침 되었습니다.
+2023-06-16 02:24:31,880 :INFO : test_step_3 :step-3 : 관심 분야별 테스트를 시작합니다.
+2023-06-16 02:24:31,894 :INFO : test_step_3 :관심 분야별 책 섹션으로 이동하였습니다.
+2023-06-16 02:24:33,922 :INFO : test_step_3 :각각의 typeBtn이 클릭되었습니다.
+2023-06-16 02:24:35,445 :INFO : test_step_3 :각각의 typeBtn이 클릭되었습니다.
+2023-06-16 02:24:36,964 :INFO : test_step_3 :각각의 typeBtn이 클릭되었습니다.
+2023-06-16 02:24:38,485 :INFO : test_step_3 :각각의 typeBtn이 클릭되었습니다.
+2023-06-16 02:24:40,005 :INFO : test_step_3 :각각의 typeBtn이 클릭되었습니다.
+2023-06-16 02:24:42,514 :INFO : test_step_4 :step-4 : 오디오북과 밀리뷰어
+2023-06-16 02:24:42,525 :INFO : test_step_4 :오디오북과 밀리뷰어 섹션으로 이동하였습니다.
+2023-06-16 02:24:42,610 :INFO : test_step_4 :exampleNumBtn이 클릭되었습니다.
+2023-06-16 02:24:44,629 :INFO : test_step_4 :exampleNumBtn이 클릭되었습니다.
+2023-06-16 02:24:46,647 :INFO : test_step_4 :exampleNumBtn이 클릭되었습니다.
+2023-06-16 02:24:48,669 :INFO : test_step_4 :exampleNumBtn이 클릭되었습니다.
+2023-06-16 02:24:50,675 :INFO : test_step_4 :현재 기준 scroll_y를 50 만큼 상단으로 이동하였습니다.
+2023-06-16 02:24:50,733 :INFO : test_step_4 :viewerNumBtn이 클릭되었습니다.
+2023-06-16 02:24:52,752 :INFO : test_step_4 :viewerNumBtn이 클릭되었습니다.
+2023-06-16 02:24:54,772 :INFO : test_step_4 :viewerNumBtn이 클릭되었습니다.
+2023-06-16 02:24:56,792 :INFO : test_step_4 :viewerNumBtn이 클릭되었습니다.
+2023-06-16 02:24:58,800 :INFO : test_step_5 :step-5 : 광고 2 (구독 이야기) 테스트를 시작합니다.
+2023-06-16 02:24:58,809 :INFO : test_step_5 :광고 2 (구독 이야기) 섹션으로 이동하였습니다.
+2023-06-16 02:24:58,842 :INFO : test_step_5 :광고 2 영상 재생이 시작되었습니다.
+2023-06-16 02:25:03,847 :INFO : test_step_5 :페이지가 새로고침 되었습니다.
+2023-06-16 02:25:04,856 :INFO : test_step_6 :step-6 : 자주 묻는 질문 테스트를 시작합니다.
+2023-06-16 02:25:04,865 :INFO : test_step_6 :자주 묻는 질문 섹션으로 이동하였습니다.
+2023-06-16 02:25:04,924 :INFO : test_step_6 :qaAccordionItem을 클릭하였습니다.
+2023-06-16 02:25:05,960 :INFO : test_step_6 :qaAccordionItem을 클릭하였습니다.
+2023-06-16 02:25:06,992 :INFO : test_step_6 :qaAccordionItem을 클릭하였습니다.
+2023-06-16 02:25:08,025 :INFO : test_step_6 :qaAccordionItem을 클릭하였습니다.
+2023-06-16 02:25:09,043 :INFO : test_step_7 :step-7 : Footer 테스트를 시작합니다.
+2023-06-16 02:25:09,052 :INFO : test_step_7 :Footer 섹션으로 이동하였습니다.
+2023-06-16 02:25:09,083 :INFO : test_step_7 :Footer의 businessInfoTit을 클릭하였습니다.
+2023-06-16 02:25:10,120 :INFO : test_step_7 :Footer의 businessInfoTit을 클릭하였습니다.
+2023-06-16 02:25:10,376 :INFO : test_millie :아이폰 12 Pro 기준 Mobile 환경 테스트를 시작합니다.
+2023-06-16 02:25:10,383 :INFO : test_step_8 :step-8 : 햄버거 버튼 테스트를 시작합니다.
+2023-06-16 02:25:10,409 :INFO : test_step_8 :햄버거 버튼 메뉴를 클릭하였습니다.
+2023-06-16 02:25:11,949 :INFO : test_step_8 :햄버거 버튼을 클릭하였습니다.
+2023-06-16 02:25:12,958 :INFO : test_step_9 :step-9 : 책 드래그 기능 테스트를 시작합니다.
+2023-06-16 02:25:12,967 :INFO : test_step_9 :책 드래그 기능 섹션으로 이동하였습니다.
+2023-06-16 02:25:13,003 :INFO : test_step_9 :typeBtn이 클릭되었습니다.
+2023-06-16 02:25:14,572 :INFO : test_step_9 :typeBtn이 클릭되었습니다.
+2023-06-16 02:25:16,154 :INFO : test_step_9 :typeBtn이 클릭되었습니다.
+2023-06-16 02:25:17,710 :INFO : test_step_9 :typeBtn이 클릭되었습니다.
+2023-06-16 02:25:19,275 :INFO : test_step_9 :typeBtn이 클릭되었습니다.
+2023-06-16 02:25:20,803 :INFO : test_millie :모든 자동화 테스트가 끝났습니다.
