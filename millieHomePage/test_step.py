@@ -5,6 +5,9 @@ from selenium.webdriver import ActionChains
 
 class TestSteps(LoggingClass):
 
+    def __init__(self, driver):
+        self.driver = driver
+
     def test_step_1(self):
         log = self.getLogger()
         log.info('step-1 : Millie 로고 클릭 시 상단 이동 테스트를 시작합니다.')
