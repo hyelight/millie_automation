@@ -1,14 +1,12 @@
-from lib2to3.pgen2 import driver
-from urllib import request
 import pytest
 from selenium import webdriver
 
 driver = None
 
 # Service
-from selenium.webdriver.chrome.service import Service
-from selenium.webdriver.firefox.service import Service
-from selenium.webdriver.edge.service import Service
+from selenium.webdriver.chrome.service import Service as ChromeService
+from selenium.webdriver.firefox.service import Service as FirefoxService
+from selenium.webdriver.edge.service import Service as EdgeService
 
 # Options
 from selenium.webdriver.chrome.options import Options
@@ -35,15 +33,15 @@ def setup(request):
         chrome_options.add_experimental_option('detach', True)
         chrome_options.add_experimental_option('excludeSwitches', ['enable-logging'])
 
-        service_obj = Service(ChromeDriverManager().install())
+        service_obj = ChromeService(ChromeDriverManager().install())
         driver = webdriver.Chrome(service=service_obj, options=chrome_options)
 
     elif browser_name == 'firefox':
-        firefox_service = Service(GeckoDriverManager().install())
+        firefox_service = FirefoxService(GeckoDriverManager().install())
         driver = webdriver.Firefox(service=firefox_service)
 
     elif browser_name == 'edge':
-        edge_service = Service(EdgeChromiumDriverManager().install())
+        edge_service = EdgeService(EdgeChromiumDriverManager().install())
         driver = webdriver.Edge(service=edge_service)
 
     driver.implicitly_wait(5)
@@ -57,12 +55,9 @@ def setup(request):
 
     driver.quit()
 
-@pytest.mark.hookwrapper
+@pytest.hookimpl(hookwrapper=True)
 def pytest_runtest_makereport(item):
-    """
-        Extends the PyTest Plugin to take and embed screenshot in html report, whenever test fails.
-        :param item:
-        """
+
     pytest_html = item.config.pluginmanager.getplugin('html')
     outcome = yield
     report = outcome.get_result()
@@ -81,4 +76,4 @@ def pytest_runtest_makereport(item):
 
 
 def _capture_screenshot(name):
-     driver.get_screenshot_as_file(name)
+        driver.get_screenshot_as_file(name)

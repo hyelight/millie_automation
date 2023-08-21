@@ -7,6 +7,7 @@ class TestSteps(LoggingClass):
 
     def __init__(self, driver):
         self.driver = driver
+        self.driver.implicitly_wait(10)
 
     def test_step_1(self):
         log = self.getLogger()
@@ -49,7 +50,7 @@ class TestSteps(LoggingClass):
 
         for typeBtn in typeBtns:
             typeBtn.click()
-            log.info('각각의 typeBtn이 클릭되었습니다.')
+            log.info(f'{typeBtn.text}이/가 클릭되었습니다.')
             time.sleep(1.5)
 
         time.sleep(1)
@@ -63,11 +64,11 @@ class TestSteps(LoggingClass):
 
         exampleNumBtns = self.driver.find_elements(By.CSS_SELECTOR, '#tab-1 ul.click-num li')
         exampleNumCount = len(exampleNumBtns)
-        assert exampleNumCount == 4, '오디오북에서 exampleNumBtns의 개수가 기존에 예상했던 4개에 맞지 않습니다.'
+        assert exampleNumCount == 4, '오디오북에서 번호의 개수가 기존에 예상했던 4개가 아닙니다.'
 
         for exampleNumBtn in exampleNumBtns:
             exampleNumBtn.click()
-            log.info('exampleNumBtn이 클릭되었습니다.')
+            log.info(f'오디오북의 {exampleNumBtn.text}이/가 클릭되었습니다.')
             time.sleep(2)
 
         # header가 가려서 자꾸 header가 클릭되는 문제 해결
@@ -80,11 +81,11 @@ class TestSteps(LoggingClass):
 
         viewerNumBtns = self.driver.find_elements(By.CSS_SELECTOR, '#tab-2 ul.click-num li')
         viewerNumCount = len(exampleNumBtns)
-        assert viewerNumCount == 4, '밀리뷰어에서 exampleNumBtns의 개수가 기존에 예상했던 4개에 맞지 않습니다.'
+        assert viewerNumCount == 4, '밀리뷰어에서 번호의 개수가 기존에 예상했던 4개가 아닙니다.'
 
         for viewerNumBtn in viewerNumBtns:
             viewerNumBtn.click()
-            log.info('viewerNumBtn이 클릭되었습니다.')
+            log.info(f'밀리뷰어의 {viewerNumBtn.text}이/가 클릭되었습니다.')
             time.sleep(2)
 
     def test_step_5(self):
@@ -115,19 +116,23 @@ class TestSteps(LoggingClass):
 
         expected_titTxts = ['안쓰면 정말 환불해 주나요?', '구독 중 해지 할 수 있나요? 수수료는 없나요?', '무료 혜택은 누구나 받을 수 있나요?', '어떤 기기에서 사용할 수 있나요?']
 
+
         for i in range(4):
-            assert qaAccordionItems[i].text == expected_titTxts[i], 'qaAccordionItems.text와 expected_titTxts가 일치하지 않습니다.'
+            assert qaAccordionItems[i].text == expected_titTxts[i], f'{qaAccordionItems[i].text}와 {expected_titTxts[i]}가 일치하지 않습니다.'
 
         expected_contents = ['환불해 드리고 있어요.', '수수료 없이', '첫 달 무료 또는 첫 주 무료', '아래 기기와 버전']
 
+        fullTitle = ['안쓰면 정말 환불해 주나요?', '구독 중 해지 할 수 있나요? 수수료는 없나요?', '무료 혜택은 누구나 받을 수 있나요?', '어떤 기기에서 사용할 수 있나요?']
+
         for i, qaAccordionItem in enumerate(qaAccordionItems):
             qaAccordionItem.click()
-            log.info('qaAccordionItem을 클릭하였습니다.')
+            log.info(f'{fullTitle[i]}를 클릭하였습니다.')
+
             accordionContent = qaAccordionItem.find_element(By.CSS_SELECTOR, '.accordion-content')
 
             time.sleep(1)
 
-            assert expected_contents[i] in accordionContent.text, 'expected_contents와 accordionContent.text가 일치하지 않습니다.'
+            assert expected_contents[i] in accordionContent.text, f'{expected_contents[i]}의 내용이 {accordionContent.text}에 없습니다.'
 
     def test_step_7(self):
         log = self.getLogger()
@@ -138,7 +143,7 @@ class TestSteps(LoggingClass):
 
         businessInfoTit = self.driver.find_element(By.CSS_SELECTOR, '.business-info-title')
         businessInfoTit.click()
-        log.info('Footer의 businessInfoTit을 클릭하였습니다.')
+        log.info(f'Footer의 {businessInfoTit.text}를 클릭하였습니다.')
 
         assert businessInfoTit.text == '사업자 정보 닫기', 'businessInfoTit 텍스트가 사업자 정보 닫기가 아닙니다.'
 
@@ -149,9 +154,9 @@ class TestSteps(LoggingClass):
         time.sleep(1)
 
         businessInfoTit.click()
-        log.info('Footer의 businessInfoTit을 클릭하였습니다.')
+        log.info(f'Footer의 {businessInfoTit.text}를 클릭하였습니다.')
 
-        assert businessInfoTit.text == '사업자 정보 펼쳐보기', 'businessInfoTit 텍스트가 사업자 정보 펼쳐보기가 아닙니다.'
+        assert businessInfoTit.text == '사업자 정보 펼쳐보기', f'{businessInfoTit.text}가 사업자 정보 펼쳐보기가 아닙니다.'
 
 
     def test_step_8(self):
@@ -168,7 +173,7 @@ class TestSteps(LoggingClass):
         expectedMenuLists = ['기업문의', '회사소개', '계정관리', '고객센터']
 
         for i in range(len(expectedMenuLists)):
-            assert navLists[i].text == expectedMenuLists[i], 'navLists.text가 expectedMenuLists와 일치하지 않습니다.'
+            assert navLists[i].text == expectedMenuLists[i], f'모바일 기준에서의 네비게이션 바의 내용이 {expectedMenuLists[i]}와 일치하지 않습니다.'
 
         hamburgerBtn.click()
         log.info('햄버거 버튼을 클릭하였습니다.')
@@ -178,18 +183,23 @@ class TestSteps(LoggingClass):
     def test_step_9(self):
         log = self.getLogger()
         log.info('step-9 : 책 드래그 기능 테스트를 시작합니다.')
+
         favBookSection = self.driver.find_element(By.CSS_SELECTOR, 'section.fav-books')
         self.driver.execute_script('arguments[0].scrollIntoView()', favBookSection)
         log.info('책 드래그 기능 섹션으로 이동하였습니다.')
 
-        action = ActionChains(self.driver)
-
         typeBtns = self.driver.find_elements(By.XPATH, "//section[@class='fav-books']/div[@class='tab-content']/label")
+        booksByFieldOfInterest = ['주식', '영어', '고전', '인테리어', '다이어트']
 
-        startElements = self.driver.find_elements(By.CSS_SELECTOR, '.fav-books .book-list-wrapper')
+        action = ActionChains(self.driver)
 
         for i in range(len(typeBtns)):
             typeBtns[i].click()
-            log.info('typeBtn이 클릭되었습니다.')
-            action.move_to_element(startElements[i]).click_and_hold().move_by_offset(-200, 0).release().perform()
+            log.info(f'{booksByFieldOfInterest[i]}이/가 클릭되었습니다.')
+
             time.sleep(1)
+
+            startElements = self.driver.find_elements(By.CSS_SELECTOR, '.conbox .nth-list .book-list-wrapper')
+            action.move_to_element(startElements[i]).click_and_hold().move_by_offset(-230, 0).release().perform()
+
+            log.info(f'{booksByFieldOfInterest[i]}의 책들이 드래그 앤 드롭 되었습니다.')
